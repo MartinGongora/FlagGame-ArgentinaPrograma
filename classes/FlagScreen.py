@@ -22,11 +22,11 @@ class FlagScreen(Screen):
         self.country = random.choice(MDApp.get_running_app().lista_paises)
         self.country_name = self.country.get("translations").get("spa").get("common")
         self.country_flag = self.country.get("flags").get("png")
-        self.correct_answer = self.country_name
+        self.correct_answer = self.country_name.upper()
     
     def check_answer(self, instance):
         # Se verifica si el boton presionado contiene la respuesta correcta
-        if instance.text == self.correct_answer:
+        if instance.text.upper() == self.correct_answer:
             print("Acierto!")
             self.score += 1    
         self.game_cycle()   
