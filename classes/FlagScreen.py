@@ -28,7 +28,8 @@ class FlagScreen(Screen):
         # Se verifica si el boton presionado contiene la respuesta correcta
         if instance.text.upper() == self.correct_answer:
             print("Acierto!")
-            self.score += 1    
+            self.score += 1   
+        self.ids.id_text_field.text = "" 
         self.game_cycle()   
 
     def start_timer(self):

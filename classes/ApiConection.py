@@ -11,7 +11,7 @@ class ApiConection():
     source = StringProperty()
     #store = JsonStore('data.json')      # Ejemplo del JsonStore como DB no relacional
 
-    def search_product(self):
+    def search_countries(self):
         print("Init search")
         try:
             api_url = f"https://restcountries.com/v3.1/all"

@@ -8,7 +8,8 @@
             hint_text: "Nombre del pais"
             on_text: root.answer = self.text
         MDRaisedButton: 
-            on_release: root.check_answer(id_text_field)
+            on_release: 
+                root.check_answer(id_text_field)
         MDLabel:
             text: root.timer_label
 

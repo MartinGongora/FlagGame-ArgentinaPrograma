@@ -30,7 +30,7 @@ class FlagGameApp(MDApp):
     
     def api_conection(self):
         api = ApiConection()
-        self.lista_paises = ApiConection.search_product(api)
+        self.lista_paises = ApiConection.search_countries(api)
         print(self.lista_paises[1])
 
 
