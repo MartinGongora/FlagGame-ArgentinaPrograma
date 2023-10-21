@@ -2,10 +2,13 @@
     MDBoxLayout:
         orientation: "vertical"
         AsyncImage:
-            id:flag
             source: root.country_flag
-        MDLabel:
-            text: root.country_name
+        MDTextField:
+            id: id_text_field
+            hint_text: "Nombre del pais"
+            on_text: root.answer = self.text
+        MDRaisedButton: 
+            on_release: root.check_answer(id_text_field)
         MDLabel:
             text: root.timer_label
 
