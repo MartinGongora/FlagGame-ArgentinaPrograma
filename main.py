@@ -7,8 +7,10 @@ import threading
 from classes.StartScreen import StartScreen
 from classes.ApiConection import ApiConection
 from classes.FlagScreen import FlagScreen
+from classes.ResultScreen import ResultScreen
 
 Builder.load_file('GUI/StartScreen.kv')
+Builder.load_file('GUI/FlagScreen.kv')
 
 class FlagGameApp(MDApp):
     # Variables globales a la App
@@ -23,6 +25,7 @@ class FlagGameApp(MDApp):
         sm = ScreenManager()
         sm.add_widget(StartScreen(name='start'))
         sm.add_widget(FlagScreen(name="flags"))
+        sm.add_widget(ResultScreen(name="result"))
         return sm
     
     def api_conection(self):
