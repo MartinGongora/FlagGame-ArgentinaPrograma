@@ -7,4 +7,5 @@ class ResultScreen(Screen):
 
     def on_enter(self):
         print(MDApp.get_running_app().score)
+        print(MDApp.get_running_app().list_answers)
         self.score = MDApp.get_running_app().score

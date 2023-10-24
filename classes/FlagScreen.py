@@ -16,7 +16,7 @@ class FlagScreen(Screen):
         self.score = 0
         self.game_cycle() 
         self.start_timer() 
-        
+        self.list_answers = []
     
     def game_cycle(self): 
         self.country = random.choice(MDApp.get_running_app().lista_paises)
@@ -28,7 +28,12 @@ class FlagScreen(Screen):
         # Se verifica si el boton presionado contiene la respuesta correcta
         if instance.text.upper() == self.correct_answer:
             print("Acierto!")
-            self.score += 1   
+            self.score += 1
+            self.respuesta = {"country": self.country_name, "valid": "YES"}
+            self.list_answers.append(self.respuesta)
+        else:
+            self.respuesta = {"country": self.country_name, "valid": "NO"}
+            self.list_answers.append(self.respuesta)            
         self.ids.id_text_field.text = "" 
         self.game_cycle()   
 
@@ -42,6 +47,7 @@ class FlagScreen(Screen):
             print("Termino el tiempo")
             MDApp.get_running_app().score = str(self.score)
             print(self.score)
+            MDApp.get_running_app().list_answers = self.list_answers
             self.go_to_question_screen()
         else:
             self.timer_label = '{:02d}:{:02d}'.format(*divmod(self.time_left, 60))

@@ -17,6 +17,7 @@ class FlagGameApp(MDApp):
     # Variables globales a la App
     lista_paises = []
     score = ""
+    list_answers = []
    
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
