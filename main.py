@@ -26,6 +26,8 @@ class FlagGameApp(MDApp):
 
     def build(self):
         sm = ScreenManager()
+        self.theme_cls.theme_style = "Dark"
+        self.theme_cls.primary_palette = "Gray"
         sm.add_widget(StartScreen(name='start'))
         sm.add_widget(FlagScreen(name="flags"))
         sm.add_widget(ResultScreen(name="result"))

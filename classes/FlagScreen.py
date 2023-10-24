@@ -12,7 +12,7 @@ class FlagScreen(Screen):
     answer = StringProperty()
 
     def on_enter(self):
-        self.time_left = 10
+        self.time_left = 60
         self.score = 0
         self.game_cycle() 
         self.start_timer() 

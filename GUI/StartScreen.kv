@@ -1,9 +1,10 @@
 <StartScreen>:
     MDBoxLayout:
         orientation: "vertical"
-        MDTextField:
-            id: text_field
-            hint_text: "Ingrese nombre"
+        Image:
+            source: "resources/logo.jpg"
+        MDLabel:
+            text: "Juego de banderas"
         MDRaisedButton:
             text: "Iniciar Juego"
             on_release: root.change_screen()
