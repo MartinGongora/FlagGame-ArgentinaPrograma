@@ -12,7 +12,7 @@ class FlagScreen(Screen):
     answer = StringProperty()
 
     def on_enter(self):
-        self.time_left = 60
+        self.time_left = 10
         self.score = 0
         self.game_cycle() 
         self.start_timer() 
@@ -40,6 +40,8 @@ class FlagScreen(Screen):
         self.time_left -= 1
         if self.time_left < 0:
             print("Termino el tiempo")
+            MDApp.get_running_app().score = str(self.score)
+            print(self.score)
             self.go_to_question_screen()
         else:
             self.timer_label = '{:02d}:{:02d}'.format(*divmod(self.time_left, 60))
