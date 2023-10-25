@@ -1,15 +1,21 @@
 <FlagScreen>:
     MDBoxLayout:
         orientation: "vertical"
+        spacing: "10dp"
         AsyncImage:
             source: root.country_flag
         MDTextField:
             id: id_text_field
             hint_text: "Nombre del pais"
+            halign: "center"
             on_text: root.answer = self.text
         MDRaisedButton: 
+            text: "Siguiente"
+            size: "150dp", "50dp"
+            pos_hint: {"center_x": 0.5, "y": 0.1}
             on_release: 
                 root.check_answer(id_text_field)
         MDLabel:
+            halign: "center"
             text: root.timer_label
 
