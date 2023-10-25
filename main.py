@@ -13,6 +13,7 @@ Builder.load_file('GUI/StartScreen.kv')
 Builder.load_file('GUI/FlagScreen.kv')
 Builder.load_file('GUI/ResultScreen.kv')
 
+
 class FlagGameApp(MDApp):
     # Variables globales a la App
     lista_paises = []
