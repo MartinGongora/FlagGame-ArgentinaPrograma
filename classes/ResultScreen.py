@@ -20,5 +20,7 @@ class ResultScreen(Screen):
             country_name = answer.get("country")
             result = answer.get("valid")
             country_item = CountryItem(text=f"{country_name} - Correcto?: {result}")
-
             results_list.add_widget(country_item)
+    
+    def change_screen(self):
+        self.manager.current = "start"
