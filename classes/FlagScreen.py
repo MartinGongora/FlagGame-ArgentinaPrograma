@@ -29,7 +29,7 @@ class FlagScreen(Screen):
         if instance.text.upper() == self.correct_answer:
             print("Acierto!")
             self.score += 1
-            self.respuesta = {"country": self.country_name, "valid": "YES"}
+            self.respuesta = {"country": self.country_name, "valid": "SI"}
             self.list_answers.append(self.respuesta)
         else:
             self.respuesta = {"country": self.country_name, "valid": "NO"}

@@ -5,13 +5,22 @@
             halign: "center"
             size_hint: 1, 0.13
             text: "Tu puntaje es:"
+            md_bg_color: app.theme_cls.primary_color
+            color: 0, 0, 0, 1
+            font_name: 'resources/font/stocky.ttf'
+            font_size: "25dp"
         MDLabel:
+            md_bg_color: app.theme_cls.primary_color
             halign: "center"
             size_hint: 1, 0.12
             text: root.score
+            color: 0, 0, 0, 1
+            font_name: 'resources/font/stocky.ttf'
+            font_size: "25dp"
         ScrollView:
             size_hint: 1, 0.75
             MDList:
+                color: app.theme_cls.primary_color
                 id: results_list 
                 size_hint_y: None 
                 height: self.minimum_height 

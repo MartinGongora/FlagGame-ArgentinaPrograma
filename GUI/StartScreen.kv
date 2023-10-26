@@ -1,6 +1,5 @@
 <StartScreen>:
     MDRelativeLayout:
-        #md_bg_color: 0.85, 0.69, 0.48, 1
         orientation: "vertical"
         Image:
             source: "resources/logo.jpg"
@@ -9,10 +8,10 @@
         MDLabel:
             text: "Bienvenido al juego de banderas!"
             halign: "center"
-            font_style: "H4"
+            font_name: 'resources/font/stocky.ttf'
+            font_size: "35dp"
+            color: app.theme_cls.primary_color
         MDRaisedButton:
-            #md_bg_color: 0.48, 0.63, 0.85, 1
-            #md_bg_color: 0.85, 0.69, 0.48, 1
             text: "Iniciar Juego"
             size_hint: None, None
             size: "150dp", "50dp"
