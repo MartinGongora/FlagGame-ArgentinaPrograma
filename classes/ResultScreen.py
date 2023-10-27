@@ -1,9 +1,10 @@
 from kivy.uix.screenmanager import Screen
 from kivymd.app import MDApp
 from kivy.properties import StringProperty
-from kivymd.uix.list import OneLineAvatarListItem
+from kivymd.uix.list import TwoLineAvatarListItem
+from kivymd.uix.list import ImageLeftWidget, IconLeftWidget
 
-class CountryItem(OneLineAvatarListItem):
+class CountryItem(TwoLineAvatarListItem):
     pass
 
 class ResultScreen(Screen):
@@ -18,8 +19,10 @@ class ResultScreen(Screen):
          
         for answer in self.list_answers:
             country_name = answer.get("country")
-            result = answer.get("valid")
-            country_item = CountryItem(text=f"{country_name} - Correcto?: {result}")
+            country_answer = answer.get("answer")
+            result_image = answer.get("valid")
+            country_item = CountryItem(text=f"{country_name}", secondary_text=f"{country_answer}")
+            country_item.add_widget(ImageLeftWidget(source=result_image))
             results_list.add_widget(country_item)
     
     def change_screen(self):

@@ -4,6 +4,7 @@ from kivy.utils import platform
 from kivy.lang import Builder
 import threading
 
+
 from classes.StartScreen import StartScreen
 from classes.ApiConection import ApiConection
 from classes.FlagScreen import FlagScreen

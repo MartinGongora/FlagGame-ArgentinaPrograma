@@ -22,17 +22,21 @@ class FlagScreen(Screen):
         self.country = random.choice(MDApp.get_running_app().lista_paises)
         self.country_name = self.country.get("translations").get("spa").get("common")
         self.country_flag = self.country.get("flags").get("png")
-        self.correct_answer = self.country_name.upper()
+        self.correct_answer = self.normalize(self.country_name.upper())
+        print(self.correct_answer)
     
     def check_answer(self, instance):
         # Se verifica si el boton presionado contiene la respuesta correcta
-        if instance.text.upper() == self.correct_answer:
+        self.country_answer = self.normalize(instance.text.upper())
+        if(len(self.country_answer)==0):
+            self.country_answer = " "
+        if self.country_answer == self.correct_answer:
             print("Acierto!")
             self.score += 1
-            self.respuesta = {"country": self.country_name, "valid": "SI"}
+            self.respuesta = {"country": self.country_name, "answer": self.country_answer,"valid": "resources/correct.png"}
             self.list_answers.append(self.respuesta)
         else:
-            self.respuesta = {"country": self.country_name, "valid": "NO"}
+            self.respuesta = {"country": self.country_name, "answer": self.country_answer,"valid": "resources/incorrect.png"}
             self.list_answers.append(self.respuesta)            
         self.ids.id_text_field.text = "" 
         self.game_cycle()   
@@ -55,3 +59,15 @@ class FlagScreen(Screen):
     def go_to_question_screen(self):
         self.evento_reloj.cancel()
         self.manager.current = "result"
+
+    def normalize(self, s):
+        replacements = (
+            ("Á", "A"),
+            ("É", "E"),
+            ("Í", "I"),
+            ("Ó", "O"),
+            ("Ú", "U")
+        )
+        for a, b in replacements:
+            s = s.replace(a,b)
+        return s
