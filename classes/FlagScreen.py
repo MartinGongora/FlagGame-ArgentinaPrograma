@@ -3,7 +3,7 @@ from kivy.uix.screenmanager import Screen
 from kivy.properties import StringProperty
 from kivy.clock import Clock
 import random
-import string
+
 
 class FlagScreen(Screen):
     timer_label = StringProperty()
@@ -17,6 +17,7 @@ class FlagScreen(Screen):
         self.game_cycle() 
         self.start_timer() 
         self.list_answers = []
+        
     
     def game_cycle(self): 
         self.country = random.choice(MDApp.get_running_app().lista_paises)
